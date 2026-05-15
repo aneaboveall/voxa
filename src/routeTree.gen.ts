@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WaitlistRouteImport } from './routes/waitlist'
 import { Route as UseCasesRouteImport } from './routes/use-cases'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProductRouteImport } from './routes/product'
 import { Route as DevelopersRouteImport } from './routes/developers'
 import { Route as IndexRouteImport } from './routes/index'
@@ -23,6 +24,11 @@ const WaitlistRoute = WaitlistRouteImport.update({
 const UseCasesRoute = UseCasesRouteImport.update({
   id: '/use-cases',
   path: '/use-cases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductRoute = ProductRouteImport.update({
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/developers': typeof DevelopersRoute
   '/product': typeof ProductRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/use-cases': typeof UseCasesRoute
   '/waitlist': typeof WaitlistRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/developers': typeof DevelopersRoute
   '/product': typeof ProductRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/use-cases': typeof UseCasesRoute
   '/waitlist': typeof WaitlistRoute
 }
@@ -60,21 +68,42 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/developers': typeof DevelopersRoute
   '/product': typeof ProductRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/use-cases': typeof UseCasesRoute
   '/waitlist': typeof WaitlistRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/developers' | '/product' | '/use-cases' | '/waitlist'
+  fullPaths:
+    | '/'
+    | '/developers'
+    | '/product'
+    | '/sitemap.xml'
+    | '/use-cases'
+    | '/waitlist'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/developers' | '/product' | '/use-cases' | '/waitlist'
-  id: '__root__' | '/' | '/developers' | '/product' | '/use-cases' | '/waitlist'
+  to:
+    | '/'
+    | '/developers'
+    | '/product'
+    | '/sitemap.xml'
+    | '/use-cases'
+    | '/waitlist'
+  id:
+    | '__root__'
+    | '/'
+    | '/developers'
+    | '/product'
+    | '/sitemap.xml'
+    | '/use-cases'
+    | '/waitlist'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DevelopersRoute: typeof DevelopersRoute
   ProductRoute: typeof ProductRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   UseCasesRoute: typeof UseCasesRoute
   WaitlistRoute: typeof WaitlistRoute
 }
@@ -93,6 +122,13 @@ declare module '@tanstack/react-router' {
       path: '/use-cases'
       fullPath: '/use-cases'
       preLoaderRoute: typeof UseCasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/product': {
@@ -123,6 +159,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DevelopersRoute: DevelopersRoute,
   ProductRoute: ProductRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   UseCasesRoute: UseCasesRoute,
   WaitlistRoute: WaitlistRoute,
 }
