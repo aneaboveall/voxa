@@ -23,7 +23,7 @@ const solutions = [
 ];
 
 const steps = [
-  { n: "01", title: "Connect a meeting environment", desc: "Drop the RelayOS bot into Zoom, Google Meet, or any WebRTC room with a single call." },
+  { n: "01", title: "Connect a meeting environment", desc: "Drop the Voxa bot into Zoom, Google Meet, or any WebRTC room with a single call." },
   { n: "02", title: "Receive a normalized event stream", desc: "Audio, transcripts, speaker turns and intents are unified across every platform." },
   { n: "03", title: "Plug in your agents via SDK or API", desc: "Use the TypeScript or Python SDK, or stream events over WebSocket." },
   { n: "04", title: "Agents listen, respond, and act live", desc: "Inject voice, trigger tools, and orchestrate workflows mid-conversation." },
@@ -41,8 +41,8 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>RelayOS — Runtime for Real-Time AI Participation</title>
-        <meta name="description" content="Bring AI agents into real-time conversations across Zoom, Google Meet, and WebRTC. RelayOS is the runtime for conversational AI." />
+        <title>Voxa — Runtime for Real-Time AI Participation</title>
+        <meta name="description" content="Bring AI agents into real-time conversations across Zoom, Google Meet, and WebRTC. Voxa is the runtime for conversational AI." />
       </Helmet>
       <SiteLayout>
       {/* HERO */}
@@ -61,7 +61,7 @@ export default function HomePage() {
               <span className="text-electric-gradient">Real-Time Conversations</span>
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
-              RelayOS is the runtime layer that allows external AI agents to participate across meetings, calls, and voice environments.
+              Voxa is the runtime layer that allows external AI agents to participate across meetings, calls, and voice environments.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-3 mt-2">
               <Button asChild variant="electric" size="lg">
@@ -131,7 +131,7 @@ export default function HomePage() {
       <Section>
         <SectionHeader
           eyebrow="The Solution"
-          title={<>RelayOS creates a runtime<br />for conversational AI.</>}
+          title={<>Voxa creates a runtime<br />for conversational AI.</>}
           description="One protocol, one event stream, one orchestration layer — across every meeting and voice surface your users live in."
         />
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -182,7 +182,7 @@ export default function HomePage() {
         <SectionHeader
           eyebrow="Architecture"
           title="Built as infrastructure."
-          description="RelayOS sits between communication platforms and the agents that act on them — handling transport, normalization, and orchestration."
+          description="Voxa sits between communication platforms and the agents that act on them — handling transport, normalization, and orchestration."
         />
         <div className="mt-16">
           <ArchitectureVisual />
@@ -220,7 +220,7 @@ export default function HomePage() {
       <Section>
         <SectionHeader
           eyebrow="Use Cases"
-          title="What teams build on RelayOS."
+          title="What teams build on Voxa."
         />
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {useCases.map((u, i) => (
@@ -249,7 +249,7 @@ export default function HomePage() {
             The future of AI is not isolated chat interfaces. It's autonomous agents collaborating inside human communication — orchestrated, real-time, and interoperable.
           </p>
           <p className="mt-4 text-base text-foreground/80">
-            RelayOS provides the infrastructure layer for this future.
+            Voxa provides the infrastructure layer for this future.
           </p>
         </div>
       </section>

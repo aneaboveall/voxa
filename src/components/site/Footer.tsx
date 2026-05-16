@@ -36,7 +36,7 @@ export function Footer() {
             <div className="h-7 w-7 rounded-md bg-gradient-to-br from-electric to-electric-glow grid place-items-center">
               <div className="h-2 w-2 rounded-sm bg-background" />
             </div>
-            <span className="font-semibold tracking-tight">RelayOS</span>
+            <span className="font-semibold tracking-tight">Voxa</span>
           </Link>
           <p className="mt-4 text-sm text-muted-foreground max-w-sm leading-relaxed">
             The runtime layer for real-time AI participation across meetings, calls, and voice environments.
@@ -67,7 +67,7 @@ export function Footer() {
       </div>
       <div className="border-t border-white/[0.06]">
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <div>© {new Date().getFullYear()} RelayOS, Inc. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Voxa, Inc. All rights reserved.</div>
           <div>Conversational infrastructure for autonomous agents.</div>
         </div>
       </div>

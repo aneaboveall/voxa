@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 
 
 
-const sdkSnippet = `import { Relay } from "@relayos/sdk";
+const sdkSnippet = `import { Relay } from "@Voxa/sdk";
 
 const relay = new Relay({ apiKey: process.env.RELAY_KEY });
 
@@ -27,7 +27,7 @@ session.on("speech.transcript", async (event) => {
 });`;
 
 const wsSnippet = `// Stream events directly over WebSocket
-const ws = new WebSocket("wss://api.relayos.dev/v1/stream");
+const ws = new WebSocket("wss://api.Voxa.dev/v1/stream");
 
 ws.onmessage = (msg) => {
   const event = JSON.parse(msg.data);
@@ -40,7 +40,7 @@ ws.send(JSON.stringify({
   agentId: "advisor_v2",
 }));`;
 
-const pySnippet = `from relayos import Relay
+const pySnippet = `from Voxa import Relay
 
 relay = Relay(api_key=os.environ["RELAY_KEY"])
 
@@ -76,9 +76,9 @@ export default function DevelopersPage() {
   return (
     <>
       <Helmet>
-        <title>Developers — RelayOS</title>
-        <meta name="description" content="SDKs, APIs, WebSocket streams, and integration patterns for building real-time AI agents on RelayOS." />
-        <meta property="og:title" content="Developers — RelayOS" />
+        <title>Developers — Voxa</title>
+        <meta name="description" content="SDKs, APIs, WebSocket streams, and integration patterns for building real-time AI agents on Voxa." />
+        <meta property="og:title" content="Developers — Voxa" />
         <meta property="og:description" content="Build conversational agents with TypeScript, Python, and streaming APIs." />
       </Helmet>
       <SiteLayout>
@@ -120,7 +120,7 @@ export default function DevelopersPage() {
               Streaming first. Always.
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              Every event in RelayOS — transcripts, turns, intents, audio chunks, tool invocations — is delivered over a single bidirectional WebSocket with replay and resume.
+              Every event in Voxa — transcripts, turns, intents, audio chunks, tool invocations — is delivered over a single bidirectional WebSocket with replay and resume.
             </p>
             <ul className="mt-6 space-y-2.5 text-sm">
               {["Sub-400ms p95 transcript latency", "Backpressure-aware audio chunks", "Resume from last event id", "Per-agent stream multiplexing"].map((f) => (

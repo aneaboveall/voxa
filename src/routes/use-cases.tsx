@@ -14,7 +14,7 @@ const cases = [
     Icon: Briefcase,
     title: "Sales",
     problem: "Reps lose deals to missed objections, weak discovery, and inconsistent follow-up.",
-    workflow: "RelayOS streams the live call into your agent stack. The agent listens for buying signals, surfaces battlecards in real time, and drafts CRM updates the moment the call ends.",
+    workflow: "Voxa streams the live call into your agent stack. The agent listens for buying signals, surfaces battlecards in real time, and drafts CRM updates the moment the call ends.",
     solution: "Live coaching, automated follow-ups, and structured outcomes — without an extra tab to manage.",
     outcome: "Higher win rates, shorter ramp time, and CRM data that's actually accurate.",
   },
@@ -38,7 +38,7 @@ const cases = [
     Icon: Users,
     title: "Internal Meetings",
     problem: "Decisions, action items, and risks evaporate the moment the call ends.",
-    workflow: "RelayOS captures decisions and ownership in real time, distributes follow-ups, and feeds your knowledge base.",
+    workflow: "Voxa captures decisions and ownership in real time, distributes follow-ups, and feeds your knowledge base.",
     solution: "Continuous memory across meetings — searchable, attributable, and acted on.",
     outcome: "Less status work, fewer dropped balls, faster organizations.",
   },
@@ -54,7 +54,7 @@ const cases = [
     Icon: Boxes,
     title: "Multi-Agent Systems",
     problem: "Specialist agents can't coordinate inside a live conversation — turn-taking and shared state break down.",
-    workflow: "RelayOS brokers turn order, shared context, and tool dispatch between multiple agents in the same session.",
+    workflow: "Voxa brokers turn order, shared context, and tool dispatch between multiple agents in the same session.",
     solution: "Deterministic orchestration primitives for live multi-agent collaboration.",
     outcome: "Workflows that previously required a human moderator now run autonomously.",
   },
@@ -64,9 +64,9 @@ export default function UseCasesPage() {
   return (
     <>
       <Helmet>
-        <title>Use Cases — RelayOS</title>
-        <meta name="description" content="Sales, recruiting, customer support, internal meetings, AI co-pilots, and multi-agent systems — all running on RelayOS." />
-        <meta property="og:title" content="Use Cases — RelayOS" />
+        <title>Use Cases — Voxa</title>
+        <meta name="description" content="Sales, recruiting, customer support, internal meetings, AI co-pilots, and multi-agent systems — all running on Voxa." />
+        <meta property="og:title" content="Use Cases — Voxa" />
         <meta property="og:description" content="Where conversational AI infrastructure goes to work." />
       </Helmet>
       <SiteLayout>
@@ -78,7 +78,7 @@ export default function UseCasesPage() {
             Where live AI agents go to work.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            From revenue teams to multi-agent systems — RelayOS is the infrastructure underneath them all.
+            From revenue teams to multi-agent systems — Voxa is the infrastructure underneath them all.
           </p>
         </div>
       </section>
@@ -105,7 +105,7 @@ export default function UseCasesPage() {
                 {[
                   { label: "Problem", body: c.problem },
                   { label: "Workflow", body: c.workflow },
-                  { label: "RelayOS solution", body: c.solution },
+                  { label: "Voxa solution", body: c.solution },
                   { label: "Outcome", body: c.outcome },
                 ].map((b) => (
                   <div key={b.label}>

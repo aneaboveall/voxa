@@ -21,10 +21,10 @@ export default function WaitlistPage() {
   return (
     <>
       <Helmet>
-        <title>Waitlist — RelayOS</title>
-        <meta name="description" content="Join the RelayOS waitlist for early access to the runtime layer for real-time AI participation." />
-        <meta property="og:title" content="Waitlist — RelayOS" />
-        <meta property="og:description" content="Get early access to RelayOS." />
+        <title>Waitlist — Voxa</title>
+        <meta name="description" content="Join the Voxa waitlist for early access to the runtime layer for real-time AI participation." />
+        <meta property="og:title" content="Waitlist — Voxa" />
+        <meta property="og:description" content="Get early access to Voxa." />
       </Helmet>
       <SiteLayout>
       <section className="relative overflow-hidden min-h-[calc(100vh-4rem)]">
@@ -36,7 +36,7 @@ export default function WaitlistPage() {
               Join the future of conversational infrastructure.
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl">
-              We're rolling out RelayOS to a small group of teams building serious live-AI products. Tell us what you're working on.
+              We're rolling out Voxa to a small group of teams building serious live-AI products. Tell us what you're working on.
             </p>
 
             <div className="mt-10 space-y-4">
@@ -116,7 +116,7 @@ export default function WaitlistPage() {
                         Request Early Access <ArrowRight className="h-4 w-4" />
                       </Button>
                       <p className="text-[11px] text-muted-foreground/70 text-center">
-                        By submitting, you agree to receive updates from RelayOS.
+                        By submitting, you agree to receive updates from Voxa.
                       </p>
                     </motion.form>
                   ) : (

@@ -23,9 +23,9 @@ export default function ProductPage() {
   return (
     <>
       <Helmet>
-        <title>Product — RelayOS</title>
-        <meta name="description" content="RelayOS abstracts conversational infrastructure: connectors, real-time event runtime, agent orchestration, and voice routing." />
-        <meta property="og:title" content="Product — RelayOS" />
+        <title>Product — Voxa</title>
+        <meta name="description" content="Voxa abstracts conversational infrastructure: connectors, real-time event runtime, agent orchestration, and voice routing." />
+        <meta property="og:title" content="Product — Voxa" />
         <meta property="og:description" content="Conversational infrastructure for autonomous agents." />
       </Helmet>
       <SiteLayout>
@@ -37,7 +37,7 @@ export default function ProductPage() {
             The runtime for live conversational AI.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            RelayOS abstracts the messy parts of real-time communication so your agents can focus on listening, deciding, and acting.
+            Voxa abstracts the messy parts of real-time communication so your agents can focus on listening, deciding, and acting.
           </p>
         </div>
       </section>
@@ -52,7 +52,7 @@ export default function ProductPage() {
             <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
               <p>Modern AI is great at understanding language but terrible at participating in real conversations. The gap isn't models — it's runtime.</p>
               <p>Today every team rebuilds the same plumbing: bot accounts per platform, custom audio pipelines, ad-hoc transcript handling, brittle turn detection, and one-off orchestration logic.</p>
-              <p>RelayOS replaces all of it with a single, opinionated runtime designed around live participation.</p>
+              <p>Voxa replaces all of it with a single, opinionated runtime designed around live participation.</p>
             </div>
           </div>
           <div className="grid gap-3">
@@ -97,7 +97,7 @@ export default function ProductPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-electric/10 to-transparent" />
           <div className="relative">
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gradient">Ready to build live agents?</h2>
-            <p className="mt-4 text-muted-foreground">Get early access to the RelayOS runtime and SDKs.</p>
+            <p className="mt-4 text-muted-foreground">Get early access to the Voxa runtime and SDKs.</p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
               <Button asChild variant="electric" size="lg"><RouterLink to="/waitlist">Join Waitlist <ArrowRight className="h-4 w-4" /></RouterLink></Button>
               <Button asChild variant="glass" size="lg"><RouterLink to="/developers">View Docs</RouterLink></Button>
