@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link as RouterLink } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowRight, Briefcase, UserSearch, Headphones, Users, Bot, Boxes } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
@@ -6,17 +7,7 @@ import { Section, SectionHeader, Eyebrow } from "@/components/site/Section";
 import { GridBackdrop } from "@/components/site/GridBackdrop";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/use-cases")({
-  head: () => ({
-    meta: [
-      { title: "Use Cases — RelayOS" },
-      { name: "description", content: "Sales, recruiting, customer support, internal meetings, AI co-pilots, and multi-agent systems — all running on RelayOS." },
-      { property: "og:title", content: "Use Cases — RelayOS" },
-      { property: "og:description", content: "Where conversational AI infrastructure goes to work." },
-    ],
-  }),
-  component: UseCasesPage,
-});
+
 
 const cases = [
   {
@@ -69,9 +60,16 @@ const cases = [
   },
 ];
 
-function UseCasesPage() {
+export default function UseCasesPage() {
   return (
-    <SiteLayout>
+    <>
+      <Helmet>
+        <title>Use Cases — RelayOS</title>
+        <meta name="description" content="Sales, recruiting, customer support, internal meetings, AI co-pilots, and multi-agent systems — all running on RelayOS." />
+        <meta property="og:title" content="Use Cases — RelayOS" />
+        <meta property="og:description" content="Where conversational AI infrastructure goes to work." />
+      </Helmet>
+      <SiteLayout>
       <section className="relative overflow-hidden">
         <GridBackdrop />
         <div className="relative mx-auto max-w-5xl px-6 pt-24 pb-16 sm:pt-32 text-center">
@@ -128,11 +126,12 @@ function UseCasesPage() {
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gradient">Have a use case in mind?</h2>
             <p className="mt-4 text-muted-foreground">Tell us what you're building. We'll get you set up.</p>
             <div className="mt-8">
-              <Button asChild variant="electric" size="lg"><Link to="/waitlist">Request Early Access <ArrowRight className="h-4 w-4" /></Link></Button>
+              <Button asChild variant="electric" size="lg"><RouterLink to="/waitlist">Request Early Access <ArrowRight className="h-4 w-4" /></RouterLink></Button>
             </div>
           </div>
         </div>
       </Section>
-    </SiteLayout>
+      </SiteLayout>
+    </>
   );
 }

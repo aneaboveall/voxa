@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link as RouterLink } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import {
   ArrowRight, Sparkles, Mic, Workflow, Plug, Volume2, Code2, Network,
@@ -11,16 +12,6 @@ import { ArchitectureVisual } from "@/components/site/ArchitectureVisual";
 import { FeatureCard } from "@/components/site/FeatureCard";
 import { CodeShowcase } from "@/components/site/CodeShowcase";
 import { Button } from "@/components/ui/button";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "RelayOS — Runtime for Real-Time AI Participation" },
-      { name: "description", content: "Bring AI agents into real-time conversations across Zoom, Google Meet, and WebRTC. RelayOS is the runtime for conversational AI." },
-    ],
-  }),
-  component: HomePage,
-});
 
 const solutions = [
   { icon: <Mic className="h-5 w-5" />, title: "Real-time speech events", desc: "Normalized transcript, turn, and intent events streamed with sub-second latency." },
@@ -46,9 +37,14 @@ const useCases = [
   { Icon: Boxes, title: "Multi-Agent Collaboration", desc: "Specialist agents share state and turn-taking inside the same conversation." },
 ];
 
-function HomePage() {
+export default function HomePage() {
   return (
-    <SiteLayout>
+    <>
+      <Helmet>
+        <title>RelayOS — Runtime for Real-Time AI Participation</title>
+        <meta name="description" content="Bring AI agents into real-time conversations across Zoom, Google Meet, and WebRTC. RelayOS is the runtime for conversational AI." />
+      </Helmet>
+      <SiteLayout>
       {/* HERO */}
       <section className="relative overflow-hidden">
         <GridBackdrop />
@@ -69,10 +65,10 @@ function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-3 mt-2">
               <Button asChild variant="electric" size="lg">
-                <Link to="/waitlist">Join Waitlist <ArrowRight className="h-4 w-4" /></Link>
+                <RouterLink to="/waitlist">Join Waitlist <ArrowRight className="h-4 w-4" /></RouterLink>
               </Button>
               <Button asChild variant="glass" size="lg">
-                <Link to="/waitlist">Request Early Access</Link>
+                <RouterLink to="/waitlist">Request Early Access</RouterLink>
               </Button>
             </div>
           </motion.div>
@@ -213,7 +209,7 @@ function HomePage() {
               ))}
             </ul>
             <Button asChild variant="glass" size="default" className="mt-8">
-              <Link to="/developers">Read the docs <ArrowRight className="h-4 w-4" /></Link>
+              <RouterLink to="/developers">Read the docs <ArrowRight className="h-4 w-4" /></RouterLink>
             </Button>
           </div>
           <CodeShowcase />
@@ -233,7 +229,7 @@ function HomePage() {
         </div>
         <div className="mt-10 text-center">
           <Button asChild variant="glass">
-            <Link to="/use-cases">Explore all use cases <ArrowRight className="h-4 w-4" /></Link>
+            <RouterLink to="/use-cases">Explore all use cases <ArrowRight className="h-4 w-4" /></RouterLink>
           </Button>
         </div>
       </Section>
@@ -271,12 +267,13 @@ function HomePage() {
             </p>
             <div className="mt-8">
               <Button asChild variant="electric" size="lg">
-                <Link to="/waitlist">Request Early Access <ArrowRight className="h-4 w-4" /></Link>
+                <RouterLink to="/waitlist">Request Early Access <ArrowRight className="h-4 w-4" /></RouterLink>
               </Button>
             </div>
           </div>
         </div>
       </Section>
-    </SiteLayout>
+      </SiteLayout>
+    </>
   );
 }
