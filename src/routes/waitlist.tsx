@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
@@ -7,19 +7,9 @@ import { Eyebrow } from "@/components/site/Section";
 import { GridBackdrop } from "@/components/site/GridBackdrop";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/waitlist")({
-  head: () => ({
-    meta: [
-      { title: "Waitlist — RelayOS" },
-      { name: "description", content: "Join the RelayOS waitlist for early access to the runtime layer for real-time AI participation." },
-      { property: "og:title", content: "Waitlist — RelayOS" },
-      { property: "og:description", content: "Get early access to RelayOS." },
-    ],
-  }),
-  component: WaitlistPage,
-});
 
-function WaitlistPage() {
+
+export default function WaitlistPage() {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", company: "", building: "" });
 
@@ -29,7 +19,14 @@ function WaitlistPage() {
   }
 
   return (
-    <SiteLayout>
+    <>
+      <Helmet>
+        <title>Waitlist — RelayOS</title>
+        <meta name="description" content="Join the RelayOS waitlist for early access to the runtime layer for real-time AI participation." />
+        <meta property="og:title" content="Waitlist — RelayOS" />
+        <meta property="og:description" content="Get early access to RelayOS." />
+      </Helmet>
+      <SiteLayout>
       <section className="relative overflow-hidden min-h-[calc(100vh-4rem)]">
         <GridBackdrop />
         <div className="relative mx-auto max-w-7xl px-6 pt-20 pb-24 sm:pt-28 grid lg:grid-cols-2 gap-16 items-start">
@@ -150,6 +147,7 @@ function WaitlistPage() {
           </div>
         </div>
       </section>
-    </SiteLayout>
+      </SiteLayout>
+    </>
   );
 }
