@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link as RouterLink } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowRight, Terminal, Cable, Webhook, Boxes } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Section, SectionHeader, Eyebrow } from "@/components/site/Section";
@@ -6,17 +7,7 @@ import { GridBackdrop } from "@/components/site/GridBackdrop";
 import { FeatureCard } from "@/components/site/FeatureCard";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/developers")({
-  head: () => ({
-    meta: [
-      { title: "Developers — RelayOS" },
-      { name: "description", content: "SDKs, APIs, WebSocket streams, and integration patterns for building real-time AI agents on RelayOS." },
-      { property: "og:title", content: "Developers — RelayOS" },
-      { property: "og:description", content: "Build conversational agents with TypeScript, Python, and streaming APIs." },
-    ],
-  }),
-  component: DevelopersPage,
-});
+
 
 const sdkSnippet = `import { Relay } from "@relayos/sdk";
 
@@ -81,9 +72,16 @@ function Code({ title, code, lang }: { title: string; code: string; lang: string
   );
 }
 
-function DevelopersPage() {
+export default function DevelopersPage() {
   return (
-    <SiteLayout>
+    <>
+      <Helmet>
+        <title>Developers — RelayOS</title>
+        <meta name="description" content="SDKs, APIs, WebSocket streams, and integration patterns for building real-time AI agents on RelayOS." />
+        <meta property="og:title" content="Developers — RelayOS" />
+        <meta property="og:description" content="Build conversational agents with TypeScript, Python, and streaming APIs." />
+      </Helmet>
+      <SiteLayout>
       <section className="relative overflow-hidden">
         <GridBackdrop />
         <div className="relative mx-auto max-w-5xl px-6 pt-24 pb-16 sm:pt-32 text-center">
@@ -95,7 +93,7 @@ function DevelopersPage() {
             Typed SDKs, streaming APIs, and conversation-aware primitives. Get an agent into a real meeting in under 20 lines.
           </p>
           <div className="mt-8 flex justify-center gap-3">
-            <Button asChild variant="electric" size="lg"><Link to="/waitlist">Get API Access <ArrowRight className="h-4 w-4" /></Link></Button>
+            <Button asChild variant="electric" size="lg"><RouterLink to="/waitlist">Get API Access <ArrowRight className="h-4 w-4" /></RouterLink></Button>
             <Button variant="glass" size="lg" asChild><a href="#sdks">View SDKs</a></Button>
           </div>
         </div>
@@ -153,11 +151,12 @@ function DevelopersPage() {
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gradient">Start building.</h2>
             <p className="mt-4 text-muted-foreground">Get an API key and ship your first live agent this week.</p>
             <div className="mt-8">
-              <Button asChild variant="electric" size="lg"><Link to="/waitlist">Request Early Access <ArrowRight className="h-4 w-4" /></Link></Button>
+              <Button asChild variant="electric" size="lg"><RouterLink to="/waitlist">Request Early Access <ArrowRight className="h-4 w-4" /></RouterLink></Button>
             </div>
           </div>
         </div>
       </Section>
-    </SiteLayout>
+      </SiteLayout>
+    </>
   );
 }

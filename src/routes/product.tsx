@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link as RouterLink } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowRight, Layers, Radio, Workflow, Volume2, Plug, Network } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Section, SectionHeader, Eyebrow } from "@/components/site/Section";
@@ -7,17 +8,7 @@ import { FeatureCard } from "@/components/site/FeatureCard";
 import { ArchitectureVisual } from "@/components/site/ArchitectureVisual";
 import { Button } from "@/components/ui/button";
 
-export const Route = createFileRoute("/product")({
-  head: () => ({
-    meta: [
-      { title: "Product — RelayOS" },
-      { name: "description", content: "RelayOS abstracts conversational infrastructure: connectors, real-time event runtime, agent orchestration, and voice routing." },
-      { property: "og:title", content: "Product — RelayOS" },
-      { property: "og:description", content: "Conversational infrastructure for autonomous agents." },
-    ],
-  }),
-  component: ProductPage,
-});
+
 
 const layers = [
   { Icon: Plug, title: "Connector System", desc: "Drop-in integrations for Zoom, Google Meet, WebRTC, SIP, and Microsoft Teams. Add new surfaces without touching your agent code." },
@@ -28,9 +19,16 @@ const layers = [
   { Icon: Layers, title: "Composable Primitives", desc: "Sessions, channels, agents, tools and policies — small, well-typed objects that compose into real workflows." },
 ];
 
-function ProductPage() {
+export default function ProductPage() {
   return (
-    <SiteLayout>
+    <>
+      <Helmet>
+        <title>Product — RelayOS</title>
+        <meta name="description" content="RelayOS abstracts conversational infrastructure: connectors, real-time event runtime, agent orchestration, and voice routing." />
+        <meta property="og:title" content="Product — RelayOS" />
+        <meta property="og:description" content="Conversational infrastructure for autonomous agents." />
+      </Helmet>
+      <SiteLayout>
       <section className="relative overflow-hidden">
         <GridBackdrop />
         <div className="relative mx-auto max-w-5xl px-6 pt-24 pb-16 sm:pt-32 text-center">
@@ -101,12 +99,13 @@ function ProductPage() {
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gradient">Ready to build live agents?</h2>
             <p className="mt-4 text-muted-foreground">Get early access to the RelayOS runtime and SDKs.</p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-              <Button asChild variant="electric" size="lg"><Link to="/waitlist">Join Waitlist <ArrowRight className="h-4 w-4" /></Link></Button>
-              <Button asChild variant="glass" size="lg"><Link to="/developers">View Docs</Link></Button>
+              <Button asChild variant="electric" size="lg"><RouterLink to="/waitlist">Join Waitlist <ArrowRight className="h-4 w-4" /></RouterLink></Button>
+              <Button asChild variant="glass" size="lg"><RouterLink to="/developers">View Docs</RouterLink></Button>
             </div>
           </div>
         </div>
       </Section>
-    </SiteLayout>
+      </SiteLayout>
+    </>
   );
 }
